@@ -32,10 +32,10 @@ function App() {
   };
 
   useEffect(() => {
-    if (data?.results.length === 0) {
+    if (query && data?.results.length === 0) {
       notify();
     }
-  }, [data]);
+  }, [data, query]);
 
   return (
     <div className={css.app}>
