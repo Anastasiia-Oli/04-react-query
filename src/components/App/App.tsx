@@ -9,7 +9,6 @@ import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import MovieModal from "../MovieModal/MovieModal";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import type { MoviesHttpResponse } from "../../types/movie";
 import ReactPaginate from "react-paginate";
 import { useEffect } from "react";
 
@@ -20,7 +19,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
 
-  const { data, isLoading, isError } = useQuery<MoviesHttpResponse>({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["movies", query, page],
     queryFn: () => fetchMovies(query, page),
     enabled: query !== "",
