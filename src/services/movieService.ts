@@ -16,7 +16,6 @@ async function fetchMovies(query: string, page: number) {
       Authorization: `Bearer ${API_KEY}`,
     },
   });
-  //   console.log(response.data.results);
   return response.data;
 }
 

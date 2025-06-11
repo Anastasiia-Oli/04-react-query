@@ -7,7 +7,6 @@ type MovieGridProps = {
 };
 
 function MovieGrid({ movies, onSelect }: MovieGridProps) {
-  // const handleClickOnMovie = () => {};
   return (
     <ul className={css.grid}>
       {movies.map((movie) => (
